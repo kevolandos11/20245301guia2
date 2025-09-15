@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El discurso del rey — Ejercicio 1</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos del ejercicio 1 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>El discurso del rey</h1>
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="#sinopsis">Sinopsis</a></li>
+        <li><a href="#director">Director</a></li>
+        <li><a href="#reparto">Reparto</a></li>
+        <li><a href="#critica">Crítica</a></li>
+        <li><a href="https://es.wikipedia.org/wiki/El_discurso_del_rey" target="_blank" rel="noopener">Wikipedia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section id="sinopsis" class="bloque">
+      <h2>Sinopsis</h2>
+
+      <!-- Figura principal con la imagen local del ejercicio -->
+      <figure class="hero">
+        <img src="css/discurso.jpg" alt="El discurso del rey — Jorge VI frente al micrófono">
+        <figcaption>Jorge VI enfrentando el micrófono en el discurso.</figcaption>
+      </figure>
+
+      <article class="articulo">
+        <p>
+          A la muerte de su padre, el rey Jorge V (Michael Gambon), y tras la escandalosa abdicación del rey Eduardo VIII (Guy Pearce),
+          Bertie (Colin Firth), afectado desde siempre de un angustioso tartamudeo, asciende de pronto al trono como Jorge VI de Inglaterra.
+          Su país se encuentra al borde de la guerra y necesita desesperadamente un líder, por lo que su esposa Isabel (Helena Bonham Carter),
+          la futura reina madre, le pone en contacto con un excéntrico logopeda llamado Lionel Logue (Geoffrey Rush). A pesar del choque
+          inicial, los dos se sumergen de lleno en una terapia poco ortodoxa que les llevará a establecer un vínculo inquebrantable.
+        </p>
+        <p>
+          Con el apoyo de Logue, su familia, su gobierno y Winston Churchill (Timothy Spall), el rey supera su afección y pronuncia un
+          discurso radiofónico que inspirará a su pueblo y lo unirá en la batalla. EL DISCURSO DEL REY, basada en la historia real del
+          rey Jorge VI, describe el camino del monarca en busca de su voz y su autoridad.
+        </p>
+        <a class="leer-mas" href="#director">Ver director</a>
+      </article>
+    </section>
+
+    <section id="director" class="bloque">
+      <h2>Director: Tom Hooper</h2>
+      <article class="articulo">
+        <p>
+          Thomas George “Tom” Hooper (Londres, 1972) es un director, escritor y productor cinematográfico y de televisión británico.
+          Su película <em>El discurso del rey</em> ha ganado un premio Óscar.
+        </p>
+        <p>
+          En adelante el éxito de la tvmovie <em>Longford</em> así como la miniserie <em>John Adams</em> (con un presupuesto de 100 millones
+          de dólares y 23 nominaciones a los Emmy) han llevado a Tom Hooper a convertirse en uno de los más aclamados directores internacionales;
+          prestigio que, sin duda, se ha visto incrementado tras el triunfo de taquilla y crítica de sus recientes películas
+          <em>El discurso del rey</em> y <em>Los miserables</em>, ganadora de 3 Oscar de la Academia.
+        </p>
+      </article>
+    </section>
+
+    <section id="reparto" class="bloque">
+      <h2>Reparto</h2>
+      <ul class="lista-reparto">
+        <li data-rol="rey">Colin Firth — Jorge VI</li>
+        <li data-rol="terapeuta">Geoffrey Rush — Lionel Logue</li>
+        <li data-rol="reina">Helena Bonham Carter — Isabel</li>
+        <li data-rol="duque">Guy Pearce — Eduardo VIII</li>
+        <li data-rol="pm">Timothy Spall — Winston Churchill</li>
+      </ul>
+    </section>
+
+    <section id="critica" class="bloque">
+      <h2>Crítica</h2>
+      <article class="articulo">
+        <p>
+          Aquí tenemos lo que siempre se denominó como buen cine. <em>El discurso del rey</em> posee las cualidades de entretener, divertir,
+          y hacernos disfrutar de una gran producción por todos los poros. Han cuadrado perfectamente aquí, la comedia inteligente de buen gusto,
+          el drama y la realidad ofrecida a través de su parte de historia.
+        </p>
+        <p>
+          De espectaculares interpretaciones merecidamente premiadas, destacar la ofrecida por Colin Firth quien da vida a Jorge VI.
+          Su perfecta tartamudez será prácticamente imposible de superar. Sin duda <em>El discurso del rey</em> fue la merecida triunfadora
+          de los Oscar (mejor película, dirección, actor protagonista y guión original). En resumen, una película que hay que ver.
+        </p>
+      </article>
+    </section>
+
+    <section id="galeria" class="bloque">
+      <h2>Galería</h2>
+      <div class="galeria">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/King_George_VI_INDFCA-176.jpg/480px-King_George_VI_INDFCA-176.jpg" alt="Retrato de Jorge VI">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Westminster_Abbey_-_West_Door.jpg/480px-Westminster_Abbey_-_West_Door.jpg" alt="Abadía de Westminster">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BBC_Broadcasting_House_2013.JPG/480px-BBC_Broadcasting_House_2013.JPG" alt="BBC Broadcasting House">
+      </div>
+      <form class="form-busqueda">
+        <label>Buscar imagen:
+          <input type="search" name="q" placeholder="micrófono, corona, palacio">
+        </label>
+        <button type="submit">Buscar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Guía 2 · Selectores avanzados y modelo de caja</p>
+  </footer>
+</body>
+</html>

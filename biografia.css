@@ -1,0 +1,397 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración de fuente base usando Google Fonts */
+html {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Contenedor principal - selector de clase */
+.wrapper {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* Header con efecto hero */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Selector descendiente - imagen dentro del header */
+header .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 1rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Pseudo-clase :hover para la imagen */
+header .profile-image:hover {
+    transform: scale(1.1);
+    border-color: #ffd700;
+}
+
+/* Títulos principales */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Selector de clase para subtítulo */
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* Navegación */
+nav {
+    background: #2c3e50;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Selector descendiente - lista dentro de nav */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Selector de hijo directo - li que es hijo de ul en nav */
+nav ul > li {
+    margin: 0;
+}
+
+/* Selector descendiente - enlaces dentro de nav */
+nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pseudo-clase :hover para enlaces de navegación */
+nav a:hover {
+    background: #34495e;
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* Selector de atributos - enlace externo con target="_blank" */
+a[target="_blank"] {
+    background: #e74c3c !important;
+    color: white !important;
+    font-weight: 600;
+}
+
+/* Pseudo-clase :hover para enlace externo */
+a[target="_blank"]:hover {
+    background: #c0392b !important;
+    transform: scale(1.05);
+}
+
+/* Pseudo-clases para enlaces visitados y no visitados */
+a:link {
+    color: #3498db;
+}
+
+a:visited {
+    color: #9b59b6;
+}
+
+/* Main content */
+main {
+    padding: 2rem;
+}
+
+/* Secciones de contenido */
+.content-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pseudo-clase :hover para secciones */
+.content-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Clase especial para sección destacada */
+.highlight-section {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+/* Selector descendiente - h2 dentro de secciones de contenido */
+.content-section h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Pseudo-elemento :after para decoración de títulos */
+.content-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+/* Override para sección destacada */
+.highlight-section h2 {
+    color: white;
+}
+
+.highlight-section h2:after {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Títulos h3 */
+h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Párrafos dentro de artículos */
+article p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Pseudo-elemento :first-letter para la primera letra de párrafos */
+article p:first-letter {
+    font-size: 1.5rem;
+    color: #e74c3c;
+    font-weight: 700;
+    float: left;
+    line-height: 1;
+    margin-right: 0.1rem;
+    margin-top: 0.1rem;
+}
+
+/* Pseudo-elemento :first-line para la primera línea del primer párrafo */
+article:first-child p:first-child:first-line {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Lista de categorías */
+.category-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+/* Selector de hijo directo para items de lista */
+.category-list > li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Pseudo-elemento :before para viñetas personalizadas */
+.category-list li:before {
+    content: '🥋';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+}
+
+/* Pseudo-clase :nth-child para alternar colores */
+.category-list li:nth-child(odd) {
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 5px;
+}
+
+.category-list li:nth-child(even) {
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 5px;
+}
+
+/* Imagen deportiva */
+.sport-image {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    float: right;
+    margin: 0 0 1rem 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Pseudo-clase :hover para imagen deportiva */
+.sport-image:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* Div de introducción deportiva */
+.sport-intro {
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Selector descendiente - párrafos dentro del footer */
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Clase para cita en footer */
+.footer-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #ecf0f1;
+    margin: 1rem 0;
+}
+
+/* Enlaces sociales */
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Pseudo-clase :active para enlace social */
+.social-link:active {
+    transform: scale(0.95);
+}
+
+/* Pseudo-clase :hover para enlace social */
+.social-link:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Selector adyacente - párrafo que sigue inmediatamente a h3 */
+h3 + p {
+    font-weight: 500;
+    color: #2c3e50;
+    border-left: 4px solid #3498db;
+    padding-left: 1rem;
+    background: rgba(52, 152, 219, 0.05);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    
+    /* Selector descendiente para navegación en móvil */
+    nav ul {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .sport-image {
+        float: none;
+        margin: 1rem auto;
+        display: block;
+    }
+    
+    .content-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación a secciones */
+.content-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Pseudo-clase :nth-child para retrasar animaciones */
+.content-section:nth-child(1) { animation-delay: 0.1s; }
+.content-section:nth-child(2) { animation-delay: 0.2s; }
+.content-section:nth-child(3) { animation-delay: 0.3s; }
+.content-section:nth-child(4) { animation-delay: 0.4s; }

@@ -1,0 +1,71 @@
+/* === Ejercicio 2 — Tablero de Damas (8×8) === */
+:root{
+  --bg:#0b1020; --panel:#0f172a; --ink:#e5e7eb;
+  --muted:#94a3b8; --accent:#38bdf8; --warn:#facc15;
+  --border:#1f2937; --sqLight:#e0e7ff; --sqDark:#0b1322;
+}
+
+*{ box-sizing:border-box; }
+html, body{ margin:0; }
+body{
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.12), transparent),
+    radial-gradient(1200px 600px at 110% 10%, rgba(250,204,21,.10), transparent),
+    linear-gradient(180deg, #0b1020, #0a0f1d);
+  line-height:1.6;
+}
+
+h1{ font-family:"Merriweather", serif; text-align:center; margin:20px 0 0; }
+.sub{ text-align:center; color:var(--muted); margin:6px 0 16px; }
+
+/* Contenedor del tablero */
+.tablero-wrapper{
+  width: min(90vw, 520px);
+  margin: 14px auto;
+  padding: 12px;
+  border:1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--panel), #0c1426);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* Cada fila del tablero */
+.tablero-wrapper > .fila{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+/* Casillas (p) — tamaño y modelo de caja */
+.tablero-wrapper .fila > p{
+  aspect-ratio: 1 / 1;
+  min-height: 48px;              /* asegura tamaño usable si aspect-ratio no aplica */
+  border:1px solid #0d1b2a;
+  margin: 0;
+}
+
+/* Patrón alternado usando :nth-child y la clase de la fila (impar/par) */
+.filaImpar > p:nth-child(odd){ background: var(--sqDark); }
+.filaImpar > p:nth-child(even){ background: var(--sqLight); }
+.filaPar   > p:nth-child(odd){ background: var(--sqLight); }
+.filaPar   > p:nth-child(even){ background: var(--sqDark); }
+
+/* Hover de casillas (pseudo-clase) */
+.tablero-wrapper .fila > p:hover{
+  outline:2px solid var(--accent);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* Leyenda */
+.leyenda{ text-align:center; color:var(--muted); }
+.leyenda .sq{
+  display:inline-block; width:16px; height:16px; border-radius:3px; border:1px solid var(--border); vertical-align:middle;
+}
+.leyenda .sq.light{ background: var(--sqLight); }
+.leyenda .sq.dark{ background: var(--sqDark); }
+
+/* Footer */
+.site-footer{ text-align:center; color:var(--muted); padding:20px 12px; }

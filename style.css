@@ -1,0 +1,130 @@
+/* === Ejercicio 1 — Selectores avanzados y modelo de caja === */
+:root{
+  --bg:#0b1020; --panel:#0f172a; --ink:#e5e7eb;
+  --muted:#94a3b8; --accent:#38bdf8; --accent2:#16a34a; --warn:#facc15;
+  --border:#1f2937;
+}
+
+/* Reset y tipografía */
+*{ box-sizing:border-box; }
+html, body{ margin:0; }
+body{
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(56,189,248,.12), transparent),
+    radial-gradient(1200px 600px at 110% 10%, rgba(250,204,21,.10), transparent),
+    linear-gradient(180deg, #0b1020, #0a0f1d);
+  line-height:1.65;
+}
+
+/* Encabezados */
+h1, h2{ font-family:"Merriweather", serif; }
+h1{ text-align:center; font-size: clamp(28px, 5vw, 46px); margin:24px 0 8px; }
+h2{ font-size: 22px; margin: 0 0 12px; color: var(--accent); }
+
+/* Contenedor principal y ejemplo de descendente vs hijo directo */
+#contenido .bloque{
+  background:linear-gradient(180deg, var(--panel), #0c1426);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px 18px;
+  margin:18px auto;
+  max-width: 980px;
+}
+#contenido > .bloque:first-child{ margin-top: 8px; } /* hijo directo + first-child */
+
+/* Figura principal (imagen local) */
+.hero{
+  margin: 6px 0 14px;
+  background:#0b1322;
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+}
+.hero img[alt*="El discurso"]{ /* selector de atributo: alt contiene 'El discurso' */
+  display:block;
+  width:100%;
+  height:auto;
+}
+.hero figcaption{
+  padding:8px 12px;
+  color:#cbd5e1;
+  font-size:.95rem;
+  border-top:1px solid var(--border);
+}
+.hero:hover figcaption{ color:#e0e7ff; } /* pseudo-clase */
+
+/* Navegación — atributos y pseudo-clases */
+.menu-principal ul{ list-style:none; display:flex; gap:10px; padding:0; justify-content:center; }
+.menu-principal a{
+  display:inline-block; padding:8px 12px; border:1px solid var(--border);
+  border-radius:999px; text-decoration:none; color:var(--ink);
+  background:#111a2d;
+  transition:transform .15s, border-color .15s, background .15s;
+}
+.menu-principal a:hover{ transform: translateY(-2px); border-color: var(--accent); }
+.menu-principal a[href^="#"]{ background:#0f213a; }          /* atributo "empieza con" */
+.menu-principal a[target="_blank"]{ outline:2px dashed var(--warn); } /* atributo exacto */
+
+/* Reparto — nth-child, first-child y atributo personalizado */
+.lista-reparto{ max-width:980px; margin:0 auto; padding-left:18px; }
+.lista-reparto li{ padding:6px 8px; border-left:3px solid transparent; }
+.lista-reparto li:nth-child(odd){ background:#0e1728; }
+.lista-reparto li:nth-child(even){ background:#0b1322; }
+.lista-reparto li:first-child{ border-left-color: var(--accent2); }
+.lista-reparto li[data-rol="reina"]{ border-left-color: var(--warn); } /* selector de atributo */
+
+/* Pseudo-elementos: primera letra y primera línea */
+.articulo p:first-of-type::first-letter{
+  font-family:"Merriweather", serif;
+  font-size: 2.4em;
+  float:left;
+  line-height: .9;
+  padding:4px 10px 0 0;
+  color: var(--warn);
+}
+.articulo p::first-line{ letter-spacing:.2px; }
+
+/* Blockquote */
+.articulo blockquote{
+  margin:10px 0 0 0; padding:10px 14px;
+  border-left: 3px solid var(--accent);
+  background:#0e1830; color:#c7d2fe;
+}
+
+/* Galería — selector de atributo para imágenes que poseen alt */
+.galeria{
+  display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width:980px; margin: 0 auto;
+}
+.galeria img[alt]{
+  width:100%; height:auto; border-radius:12px; border:1px solid var(--border);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.galeria img[alt]:hover{
+  transform: scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* Formulario — selector de atributo por tipo y pseudo-clase focus */
+.form-busqueda{ max-width:980px; margin: 6px auto 0; display:flex; gap:8px; align-items:center; }
+.form-busqueda input[type="search"]{
+  flex:1; padding:10px 12px; border-radius:10px; border:1px solid var(--border);
+  background:#0c1527; color:var(--ink);
+}
+.form-busqueda input[type="search"]:focus{ outline:2px solid var(--accent); }
+.form-busqueda button[type="submit"]{
+  padding:10px 16px; border-radius:10px; border:1px solid var(--border);
+  background:#12325a; color:#fff; cursor:pointer;
+}
+.form-busqueda button[type="submit"]:hover{ background:#18406f; }
+
+/* Footer */
+.site-footer{ text-align:center; color:var(--muted); padding:20px 12px; }
+
+/* Paso 23: subrayar la primera línea de cada párrafo del primer artículo usando :first-child + ::first-line */
+#contenido > section:first-child article p::first-line{
+  text-decoration: underline;
+}
